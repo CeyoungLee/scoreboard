@@ -21,7 +21,7 @@ class App extends React.Component {
         this.state.players.map((player) => (
           <Player name={player.name} key={player.id.toString()} score={player.score}
                   changeScore={this.handleChangeScore}
-                  removePlayer={this.handleRemovePlayer} id={player.id} />
+                  removePlayer={this.handleRemovePlayer} id={player.id}/>
         ))
       }
     </div>)
@@ -39,9 +39,20 @@ class App extends React.Component {
       return {players: players}
     })
   }
-    handleChangeScore(id, delta){
-      console.log('handleChangeScore', id, ' ', delta)
-    }
+
+  handleChangeScore = (id, delta) => {
+    console.log('handleChangeScore', id, ' ', delta)
+    this.setState(prevState => {
+      //원본배열이 아닌 새배열 리턴하기 바구니만 보고 자식이 같다고 생각할까봐
+      const players = [...prevState.players];
+      players.forEach(player => {
+        if (player.id ===id ){
+          player.score += delta
+        }
+      })
+      return {players}
+    })
+  }
 
 }
 
