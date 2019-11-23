@@ -1,19 +1,7 @@
 import React from 'react';
 import './App.css';
 import {Header} from './components/Header';
-import {Counter} from './components/Counter';
-
-
-const Player = (props) => (
-  <div className="player">
-    <span className="player-name">
-      <button className="remove-player" onClick={() => props.removePlayer(props.id)}> x </button>
-      {props.name}</span>
-    <Counter />
-  </div>
-);
-
-
+import {Player} from './components/Player';
 
 
 class App extends React.Component {
