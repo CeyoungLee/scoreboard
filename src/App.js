@@ -20,6 +20,7 @@ class App extends React.Component {
       {
         this.state.players.map((player) => (
           <Player name={player.name} key={player.id.toString()} score={player.score}
+                  changeScore={this.handleChangeScore}
                   removePlayer={this.handleRemovePlayer} id={player.id} />
         ))
       }
@@ -32,12 +33,16 @@ class App extends React.Component {
     //this.state.players = players; 이렇게 하면 안된대
     console.log(players);
     this.setState(prevState => {
-      const players = prevState.players.filter(player => player.id !== id)
+      const players = prevState.players.filter(player => player.id !== id);
       // immutable 함수를 이용하여 새로운 배열을 리턴해야합니다.
       //키와 변수가 같을 경우 한쪽을 생략. : shorthand property
       return {players: players}
     })
   }
+    handleChangeScore(id, delta){
+      console.log('handleChangeScore', id, ' ', delta)
+    }
+
 }
 
 
