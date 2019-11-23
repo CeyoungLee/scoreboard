@@ -1,22 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
-const players = [
-  {id: 1, name: 'LDK'},
-  {id: 2, name: 'PARK'},
-  {id: 3, name: 'KIM'},
-  {id: 4, name: 'HONG'}
-];
-
-const Header = (props) => {
-  console.log(props);
-  return (<header className="header">
-      <h1 className="h1">{props.title}</h1>
-      <span className="stats">Player: {props.totalPlayers}</span>
-    </header>
-  )
-};
+import {Header} from './components/Header';
 
 const Player = (props) => (
   <div className="player">
@@ -73,7 +57,7 @@ class App extends React.Component {
   handleRemovePlayer = (id) => {
     console.log('removePlayer:' + id);
     const players = this.state.players.filter(player => player.id !== id); //id값이 사라진 애들만 남긴 배열 리턴. this 가 클릭시 실행되는 비동기라서 큐에서 기다리고 있다. this가 undefined
-    this.state.players = players;
+    //this.state.players = players; 이렇게 하면 안된대
     console.log(players);
     this.setState(prevState => {
       const players = prevState.players.filter(player => player.id !== id)
