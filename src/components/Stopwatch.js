@@ -29,7 +29,7 @@ export class Stopwatch extends React.Component {
   }
 
   componentDidMount() {
-    console.log('componentDidMount');
+   // console.log('componentDidMount');
     this.tickRef = setInterval(this.tick, 1000);
   }
 

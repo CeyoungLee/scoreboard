@@ -3,10 +3,12 @@ import {Stats} from "./Stats";
 import {Stopwatch} from "./Stopwatch";
 
 export const Header = (props) => {
-  console.log(props);
-  return (<header className="header">
-      <Stats players = {props.players}/>
-      <h1 className="h1">{props.title}</h1>
+  // console.log(props);
+  const {title, players} = props
+  return (
+    <header className="header">
+      <Stats players={players}/>
+      <h1 className="h1">{title}</h1>
       <Stopwatch></Stopwatch>
     </header>
   )
