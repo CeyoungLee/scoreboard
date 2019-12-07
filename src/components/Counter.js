@@ -1,4 +1,6 @@
 import React from "react";
+import {connect} from "react-redux";
+import {changeScore} from "../redux/actions";
 
 export class Counter extends React.Component {
 
@@ -12,3 +14,9 @@ export class Counter extends React.Component {
     )
   }
 }
+
+const mapActionToProps = (dispatch) => ({
+  changeScore : (id,delta)=> dispatch(changeScore(id, delta))
+})
+
+export default connect(null, mapActionToProps)(Counter);

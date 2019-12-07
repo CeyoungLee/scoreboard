@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
 import {Header} from './components/Header';
-import {Player} from './components/Player';
+import Player from './components/Player';
 import AddPlayerForm from "./components/AddPlayerForm";
 import {connect} from "react-redux";
 
-let maxID = 4;
+let maxId = 4;
 
 class App extends React.Component {
 
@@ -14,15 +14,13 @@ class App extends React.Component {
       <Header title="My Scoreboard" players={this.props.players}/>
       {
         this.props.players.map((player) => (
-          <Player name={player.name} key={player.id.toString()} score={player.score}
-                  changeScore={this.handleChangeScore}
-                  removePlayer={this.handleRemovePlayer} id={player.id}/>
+          <Player name={player.name} key={player.id.toString()} score={player.score}/>
         ))
       }
       <AddPlayerForm></AddPlayerForm>
     </div>)
   }
-
+/*
   handleRemovePlayer = (id) => {
     console.log('removePlayer:' + id);
     const players = this.props.players.filter(player => player.id !== id); //id값이 사라진 애들만 남긴 배열 리턴. this 가 클릭시 실행되는 비동기라서 큐에서 기다리고 있다. this가 undefined
@@ -34,23 +32,7 @@ class App extends React.Component {
       //키와 변수가 같을 경우 한쪽을 생략. : shorthand property
       return {players: players}
     })
-  }
-
-  handleChangeScore = (id, delta) => {
-    console.log('handleChangeScore', id, ' ', delta)
-    this.setState(prevState => {
-      //원본배열이 아닌 새배열 리턴하기 바구니만 보고 자식이 같다고 생각할까봐
-      const players = [...prevState.players];
-      players.forEach(player => {
-        if (player.id ===id ){
-          player.score += delta
-        }
-      })
-      return {players}
-    })
-  }
-
-
+  }*/
 }
 
 const mapStateToProps = (state) => {

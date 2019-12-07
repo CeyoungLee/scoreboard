@@ -1,4 +1,4 @@
-import {ADD_PLAYER} from "../actionTypes";
+import {ADD_PLAYER, CHANGE_SCORE, REMOVE_PLAYER} from "../actionTypes";
 
 let maxId = 4;
 
@@ -11,13 +11,30 @@ const playerInitialState={
   ]
 };
 
+
 export const playerReducer = (state= playerInitialState,action)=>{
+  let players
   switch (action.type) {
     case ADD_PLAYER:
       return {
         ...state,
         players : [ ...state.players,{id: ++maxId, name: action.name, score:0}]
       };
+    case CHANGE_SCORE:
+      players =[...state.players];
+      players.forEach(player => {
+        if (player.id === action.id){
+          player.score += action.delta;
+        }
+      });
+      return{
+        ...state, players
+      }
+    case REMOVE_PLAYER:
+      players = state.players.filter(player => player.id !== action.id);
+      return{
+        ...state, players
+      }
   }
 
 return state;
