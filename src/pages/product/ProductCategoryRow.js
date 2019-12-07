@@ -1,4 +1,5 @@
 import React from 'react';
+import './ProductRow.module.scss';
 
 export const ProductCategoryRow = (props) => {
   return (
