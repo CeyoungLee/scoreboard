@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3724ea06-0aed-4cb7-bfc8-0126ec040da0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/CustomPlayer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/StopwatchHooks.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Player.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Player.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/StopwatchHooks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StopwatchHooks.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -67,8 +64,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/StopwatchHooks.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="6" column="40" lean-forward="true" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+            <state relative-caret-position="396">
+              <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -141,6 +138,7 @@
       <find>value</find>
       <find>C</find>
       <find>player</find>
+      <find>stopwat</find>
     </findStrings>
     <replaceStrings>
       <replace>this.props.</replace>
@@ -312,7 +310,7 @@
       <updated>1574473844766</updated>
       <workItem from="1574473846025" duration="8967000" />
       <workItem from="1575074483722" duration="17638000" />
-      <workItem from="1575682903064" duration="10650000" />
+      <workItem from="1575682903064" duration="10943000" />
     </task>
     <task id="LOCAL-00001" summary="git ignore commit">
       <created>1574495055112</created>
@@ -454,11 +452,18 @@
       <option name="project" value="LOCAL" />
       <updated>1575689902465</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="stopwatch 훅스화 완료">
+      <created>1575701847999</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1575701847999</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37255000" />
+    <option name="totallyTimeSpent" value="37548000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -560,7 +565,8 @@
     <MESSAGE value="appjs lifting, addplayer into action. one error" />
     <MESSAGE value="noerrorfound - 전기의 error는 npm install 로 해결. changeScore숫자적용안됨. remove 와 addplayer의 dispatch 화 완료." />
     <MESSAGE value="fixup! noerrorfound - 전기의 error는 npm install 로 해결. changeScore, remove 액션화 하였으나 적용안됨.  addplayer의 dispatch 화 완료." />
-    <option name="LAST_COMMIT_MESSAGE" value="fixup! noerrorfound - 전기의 error는 npm install 로 해결. changeScore, remove 액션화 하였으나 적용안됨.  addplayer의 dispatch 화 완료." />
+    <MESSAGE value="stopwatch 훅스화 완료" />
+    <option name="LAST_COMMIT_MESSAGE" value="stopwatch 훅스화 완료" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -766,8 +772,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/StopwatchHooks.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="6" column="40" lean-forward="true" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+        <state relative-caret-position="396">
+          <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
         </state>
       </provider>
     </entry>

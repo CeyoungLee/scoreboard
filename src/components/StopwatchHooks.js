@@ -8,30 +8,26 @@ export function Stopwatch () {
 
   useEffect(() => {
     //DOM 이 렌더링 된 후  side effect 호출되는 펑션을 여기에 적어라
-    this.tickRef = setInterval(this.tick, 1000);
+    tickRef = setInterval(tick, 1000);
     return () => {
-      clearInterval(this.tickRef)
+      clearInterval(tickRef)
     }
   },[]);
 
-  function handleStopwatch() {
-    this.setState(prevState => ({isRunning: !prevState.isRunning}))
-  }
-
   function tick() {
-    if (this.state.isRunning) {
-      this.setState(prevState => ({timer: prevState.timer + 1}));
+    if (isRunning) {
+      setTimer(timer+1);
     }
   }
 
   return (
     <div className="stopwatch">
       <h1 className="h1">Stopwatch</h1>
-      <span className="stopwatch-time">{this.state.timer}</span>
-      <button onClick={this.handleStopwatch.bind(this)}>{this.state.isRunning ? 'Stop' : 'Start'}</button>
+      <span className="stopwatch-time">{timer}</span>
+      <button onClick= {() => setIsRunning(!isRunning)}>{isRunning ? 'Stop' : 'Start'}</button>
       <button onClick={() => {
-        this.setState({timer: 0})
-      }}>Reset
+        setTimer(0)}}>
+        Reset
       </button>
     </div>
   );
