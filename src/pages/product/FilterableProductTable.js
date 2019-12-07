@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {SearchBar} from "./SearchBar";
 import {ProductTable} from "./ProductTable";
 
@@ -11,11 +11,15 @@ const products = [
   {category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7"}
 ];
 
+
+
 const FilterableProductTable = (props) => {
+  const [keyword, setKeyword] = useState('');
+
   return (
     <div>
-      <SearchBar/>
-      <ProductTable products = {products}></ProductTable>
+      <SearchBar keyword = {keyword} setKeyword={setKeyword}/>
+      <ProductTable products = {products.filter(item=>item.name.indexOf(keyword)>=0)}></ProductTable>
     </div>
   );
 };
