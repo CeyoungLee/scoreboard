@@ -1,20 +1,24 @@
 import React from 'react';
 import './App.css';
 import {Header} from './components/Header';
-import Player from './components/Player';
 import AddPlayerForm from "./components/AddPlayerForm";
 import {connect} from "react-redux";
-
-let maxId = 4;
+import {CustomPlayer} from "./components/CustomPlayer";
+import _ from 'lodash';
+import Player from './components/Player';
 
 class App extends React.Component {
+  getHighScore(){
+    const maxObj = _.maxBy(this.props.players, 'score');
+    return maxObj.score;
+  }
 
   render() {
     return (<div className="scoreboard">
       <Header title="My Scoreboard" players={this.props.players}/>
       {
         this.props.players.map((player) => (
-          <Player name={player.name} key={player.id.toString()} score={player.score}/>
+          <CustomPlayer name={player.name} key={player.id.toString()} score={player.score} isHighScore={this.getHighScore() === player.score}/>
         ))
       }
       <AddPlayerForm></AddPlayerForm>
